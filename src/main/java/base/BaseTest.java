@@ -3,6 +3,7 @@ package base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -11,10 +12,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import exceptions.InvalidBrowserException;
+import utils.ExtentManager;
 
 public class BaseTest {
 
@@ -23,6 +30,8 @@ public class BaseTest {
 	public static Properties configProp;
 	public static FileInputStream fis2;
 	public static Properties locatorsProp;
+	public static ExtentReports reports;
+	public static ExtentTest test;
 
 	@BeforeTest
 	public void beforeTest() {
@@ -58,27 +67,33 @@ public class BaseTest {
 			e.printStackTrace();
 		}
 		
+		reports=ExtentManager.getReports();
 
 	}
 
 	@BeforeMethod
-	public void setUp() {
+	public void setUp(Method method) {
+		
+		test=reports.createTest(method.getName());
 
 		String browserName = configProp.getProperty("browser");
 
 		switch (browserName) {
 		case "chrome":
 			driver = new ChromeDriver();
+			test.log(Status.INFO, browserName+" browser is started..");
 
 			break;
 
 		case "firefox":
 			driver = new FirefoxDriver();
+			test.log(Status.INFO, browserName+" browser is started..");
 
 			break;
 
 		case "edge":
 			driver = new EdgeDriver();
+			test.log(Status.INFO, browserName+" browser is started..");
 
 			break;
 
@@ -93,6 +108,7 @@ public class BaseTest {
 		}
 
 		driver.get(configProp.getProperty("url"));
+		test.log(Status.INFO,  "App is launched using url "+configProp.getProperty("url"));
 		
 		driver.manage().window().maximize();
 		
@@ -111,6 +127,14 @@ public class BaseTest {
 		
 		
 		driver.quit();
+		test.log(Status.INFO,  "Browser is closed ..");
+		
+	}
+	
+	@AfterTest
+	public void reportsEnd()
+	{
+		reports.flush();
 	}
 
 }

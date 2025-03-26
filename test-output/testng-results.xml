@@ -2,28 +2,46 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-25T19:56:42 IST" name="Default suite" finished-at="2025-03-25T19:56:52 IST" duration-ms="9516">
+  <suite started-at="2025-03-26T20:11:09 IST" name="Default suite" finished-at="2025-03-26T20:11:42 IST" duration-ms="32718">
     <groups>
     </groups>
-    <test started-at="2025-03-25T19:56:42 IST" name="Default test" finished-at="2025-03-25T19:56:52 IST" duration-ms="9516">
-      <class name="regression.ValidateLoginUsingPOM">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:regression.ValidateLoginUsingPOM@27462a88]" started-at="2025-03-25T19:56:42 IST" name="beforeTest" finished-at="2025-03-25T19:56:42 IST" duration-ms="6" status="PASS">
+    <test started-at="2025-03-26T20:11:09 IST" name="Default test" finished-at="2025-03-26T20:11:42 IST" duration-ms="32718">
+      <class name="regression.ValidateLoginUsingPOMDataProvider">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:regression.ValidateLoginUsingPOMDataProvider@7db12bb6]" started-at="2025-03-26T20:11:09 IST" name="beforeTest" finished-at="2025-03-26T20:11:32 IST" duration-ms="22692" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:regression.ValidateLoginUsingPOM@27462a88]" started-at="2025-03-25T19:56:42 IST" name="setUp" finished-at="2025-03-25T19:56:47 IST" duration-ms="4884" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:regression.ValidateLoginUsingPOMDataProvider@7db12bb6]" started-at="2025-03-26T20:11:33 IST" name="setUp" finished-at="2025-03-26T20:11:37 IST" duration-ms="4270" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void regression.ValidateLoginUsingPOMDataProvider.validateLoginTest(java.util.HashMap)]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="validateLoginTest()[pri:0, instance:regression.ValidateLoginUsingPOM@27462a88]" started-at="2025-03-25T19:56:47 IST" name="validateLoginTest" finished-at="2025-03-25T19:56:48 IST" duration-ms="1236" status="PASS">
+        <test-method signature="validateLoginTest(java.util.HashMap)[pri:0, instance:regression.ValidateLoginUsingPOMDataProvider@7db12bb6]" started-at="2025-03-26T20:11:37 IST" name="validateLoginTest" data-provider="getTestData" finished-at="2025-03-26T20:11:38 IST" duration-ms="1479" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{expTitle=Adactin.com - Search Hotel, password=reyaz123, username=reyaz0806}]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateLoginTest -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:regression.ValidateLoginUsingPOM@27462a88]" started-at="2025-03-25T19:56:48 IST" name="teardown" finished-at="2025-03-25T19:56:52 IST" duration-ms="3361" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:regression.ValidateLoginUsingPOMDataProvider@7db12bb6]" started-at="2025-03-26T20:11:38 IST" name="teardown" finished-at="2025-03-26T20:11:42 IST" duration-ms="3309" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- regression.ValidateLoginUsingPOM -->
+        <test-method is-config="true" signature="reportsEnd()[pri:0, instance:regression.ValidateLoginUsingPOMDataProvider@7db12bb6]" started-at="2025-03-26T20:11:42 IST" name="reportsEnd" finished-at="2025-03-26T20:11:42 IST" duration-ms="443" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportsEnd -->
+      </class> <!-- regression.ValidateLoginUsingPOMDataProvider -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
