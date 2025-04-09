@@ -55,5 +55,12 @@ public class LoginPage extends BasePage {
     
 	
 	//Methods 
+	
+	public void login()
+	{
+		type(usernameTextbox, configProp.getProperty("username"));
+		type(passwordTextbox, configProp.getProperty("password"));
+		click(loginButton);
+	}
 
 }
